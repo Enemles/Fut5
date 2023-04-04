@@ -14,3 +14,11 @@ header {
   max-width: 1200px;
   padding: 1rem;
 }
+body{
+  margin: 0;
+}
+
+@font-face {
+  font-family: "TangoSans";
+  src: url("./assets/fonts/TangoSans.ttf");
+}

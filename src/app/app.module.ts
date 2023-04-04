@@ -31,7 +31,7 @@ if (environment.production) {
     TeamDetailsComponent,
     PlayerDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
