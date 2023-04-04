@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 })
 export class PlayerCardComponent {
 
-  perf: Number = 99;
-  nickname: String = "L'atout";
+  perf: number = 99;
+  nickname: string = "L'atout";
+
+  PAC: number = 95;
+  SHO: number = 95;
+  PAS: number = 95;
+  DRI: number = 95;
+  DEF: number = 95;
+  PHY: number = 95;
 
 }
