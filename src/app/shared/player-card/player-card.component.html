@@ -1,46 +1,48 @@
 <div class="card">
-  <img src="assets/img/PlayerCard.svg" alt="card" />
-  <div id="top">
-    <div id="global-stats">
-      <span class="span-top" id="big-stat">{{perf}}</span>
-      <span class="span-top" id="nickname">{{nickname | uppercase}}</span>
-      <div class="top-separator"></div>
-      <img src="assets/img/drapeau-france.png" alt="france"/>
-      <div class="top-separator"></div>
-      <img src="assets/img/rank-6.png"  />
+  <img src="assets/img/PlayerCard.svg" alt="card"/>
+  <div id="content">
+    <div id="top">
+      <div id="global-stats">
+        <span class="span-top" id="big-stat">{{perf}}</span>
+        <span class="span-top" id="nickname">{{nickname | uppercase}}</span>
+        <div class="top-separator"></div>
+        <img src="assets/img/drapeau-france.png" alt="france"/>
+        <div class="top-separator"></div>
+        <img src="assets/img/rank-6.png"/>
+      </div>
+      <img id="picture" src="assets/img/mbappe.png" alt="mbappe"/>
     </div>
-    <img id="picture" src="assets/img/mbappe.png" alt="mbappe" />
-  </div>
-  <div id="bottom">
-    <div class="bot-section">
-      <div class="row">
-        <span>{{PAC}}</span>
-        <span>PAC</span>
+    <div id="bottom">
+      <div class="bot-section">
+        <div class="row">
+          <span>{{PAC}}</span>
+          <span>PAC</span>
+        </div>
+        <div class="row">
+          <span>{{SHO}}</span>
+          <span>SHO</span>
+        </div>
+        <div class="row">
+          <span>{{PAS}}</span>
+          <span>PAS</span>
+        </div>
       </div>
-      <div class="row">
-        <span>{{SHO}}</span>
-        <span>SHO</span>
+      <div class="bot-section">
+        <div class="row">
+          <span>{{DRI}}</span>
+          <span>DRI</span>
+        </div>
+        <div class="row">
+          <span>{{DEF}}</span>
+          <span>DEF</span>
+        </div>
+        <div class="row">
+          <span>{{PHY}}</span>
+          <span>PHY</span>
+        </div>
       </div>
-      <div class="row">
-        <span>{{PAS}}</span>
-        <span>PAS</span>
-      </div>
-    </div>
-    <div class="bot-section">
-      <div class="row">
-        <span>{{DRI}}</span>
-        <span>DRI</span>
-      </div>
-      <div class="row">
-        <span>{{DEF}}</span>
-        <span>DEF</span>
-      </div>
-      <div class="row">
-        <span>{{PHY}}</span>
-        <span>PHY</span>
-      </div>
-    </div>
 
+    </div>
   </div>
 
 </div>
