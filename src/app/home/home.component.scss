@@ -20,6 +20,9 @@
   flex: 1;
   background-color: #007bff;
   overflow: hidden;
+  height:100%;
+  display: flex;
+  flex-direction: column;
 }
 .img-banner{
   height: 20vh;
@@ -27,7 +30,39 @@
   img{
     width: 100%;
   }
+}
 
+.banner{
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  padding: 2vh 0;
+  overflow: hidden;
+  width: 100%;
+  background-color: aqua;
+  span{
+    font-size: 2vh;
+    animation: banner-roll 12s linear infinite;
+    letter-spacing: 2px;
+  }
+}
+
+.infos{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #FFD13C;
+  align-items: center;
+  margin: 5vh;
+}
+
+@keyframes banner-roll {
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
 }
 
 app-player-card{

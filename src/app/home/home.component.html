@@ -7,5 +7,23 @@
     <div class="img-banner">
       <img src="../../assets/img/banniere-ligue.jpeg" alt="img banner">
    </div>
+    <div class="banner">
+      <span>- PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}} </span>
+      <span>- PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}} </span>
+    </div>
+    <div class="infos">
+      <span>{{location | uppercase}}</span>
+      <div class="line1">
+        <span>{{hour}}</span>
+        <span>{{team}}</span>
+      </div>
+      <div class="line2">
+        <span class="player" *ngFor="let player of listTeam1">
+              {{player}}
+        </span>
+        <span class="player" *ngFor="let player of listTeam2">
+              {{player}}
+        </span>
+    </div>
   </div>
 </div>
