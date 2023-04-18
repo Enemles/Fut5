@@ -34,10 +34,26 @@
 
 .header-nav-item {
   margin-left: 1rem;
+  padding: 10px 25px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  &.register, &.logout{
+    background: #63C37B;
+    border-radius: 5px;
+    a{
+      color: white;
+    }
+  }
+  &.btn-primary{
+    a{
+      color: white;
+    }
+  }
 }
 
 .header-nav-link {
-  color: #333;
+  color: black;
   display: block;
   padding: 0.25rem 0.5rem;
   text-decoration: none;

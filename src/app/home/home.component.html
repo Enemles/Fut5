@@ -1,1 +1,4 @@
-<p>home works!</p>
+<div *ngIf="currentUser$ | async as currentUser">
+  <p>Salut {{currentUser.displayName}}!</p>
+<!--  <p>Salut {{currentUser.displayName.split(' ')[0]}}!</p>-->
+</div>

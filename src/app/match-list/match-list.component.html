@@ -1,1 +1,9 @@
-<p>match-list works!</p>
+<h1>Liste des matchs</h1>
+<div class="match-grid">
+  <div class="match-card" *ngFor="let match of matchList">
+    <a (click)="showMatchDetails(match.id)" routerLink="/matches/#">
+    {{ match.name }} - {{ match.date }}  et {{ match.players }}
+    </a>
+  </div>
+
+</div>

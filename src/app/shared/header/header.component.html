@@ -3,17 +3,17 @@
     <a class="header-brand" routerLink="/">FUT5</a>
     <nav class="header-nav">
       <ul class="header-nav-list">
-        <li class="header-nav-item">
+        <li class="header-nav-item" *ngIf="isAuthenticated">
           <a class="header-nav-link" routerLink="/matches">Matchs</a>
         </li>
-        <li class="header-nav-item">
-          <a class="header-nav-link" routerLink="/teams">Équipes</a>
-        </li>
-        <li class="header-nav-item">
+        <li class="header-nav-item login" *ngIf="!isAuthenticated">
           <a class="header-nav-link" routerLink="/login">Connexion</a>
         </li>
-        <li class="header-nav-item">
-          <a class="header-nav-link" routerLink="/register">Inscription</a>
+        <li class="header-nav-item btn btn-primary" *ngIf="!isAuthenticated">
+          <a class="header-nav-link" routerLink="/register">S'inscrire</a>
+        </li>
+        <li class="header-nav-item btn btn-primary" *ngIf="isAuthenticated">
+          <a class="header-nav-link" (click)="logout()">Se déconnecter</a>
         </li>
       </ul>
     </nav>
