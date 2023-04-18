@@ -30,13 +30,14 @@ img{
   align-items: center;
   margin-left: 20%;
   gap: 0.5vw;
+  height: 100%;
   img{
     width: 70%;
   }
 }
 
 .span-top{
-  font-family: "TangoSans";
+  font-family: "GeneralSans";
   font-weight: bold;
   color: #FFD13C;
 
@@ -45,14 +46,9 @@ img{
   font-size: 5vw;
   letter-spacing: 0.3vw;
 }
-#nickname{
+#nickname {
   font-size: 1vw;
   letter-spacing: 0.1vw;
-}
-
-.top-separator{
-  background-color: #715AFF;
-  padding: 1px 40%;
 }
 
 #bottom{
@@ -82,7 +78,8 @@ bot-section{
 
 .row{
   span{
-    font-family: TangoSans;
+    font-family: GeneralSans;
+    font-weight: 500;
     font-size: 130%;
     color: #FFD13C;
   }
