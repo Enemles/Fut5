@@ -16,6 +16,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import {AngularFireModule} from "@angular/fire/compat";
 import {FormsModule} from "@angular/forms";
+import { ModalMatchComponent } from './modal-match/modal-match.component';
+import {ClickOutsideDirective} from "./Directives/click-outside.directive";
 
 if (environment.production) {
   enableProdMode();
@@ -29,7 +31,9 @@ if (environment.production) {
     MatchDetailsComponent,
     PlayerDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModalMatchComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,

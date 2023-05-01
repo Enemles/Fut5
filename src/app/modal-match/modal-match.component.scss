@@ -1,0 +1,125 @@
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .modal-content {
+    background-color: #fefefe;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 70%;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+
+    &.bounceIn {
+      animation-name: bounceIn;
+    }
+
+    .title{
+      font-size: 30px;
+      text-align: center;
+      color: #131340;
+    }
+    .match-details{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      margin: 30px 0;
+    }
+    .match{
+      &-location, &-time, &-players--length{
+        font-weight: 700;
+      }
+    }
+    .list-players{
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+      .flex-container{
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        margin: 30px 0;
+        .player{
+          width: 50%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .bottom{
+      display: flex;
+      justify-content: space-between;
+      button{
+        &.status{
+          &-button {
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+            margin-right: 10px;
+
+          }
+
+          &-present {
+            background: #63C37B;
+            color: white;
+          }
+
+          &-absent {
+            background-color: red;
+            color: white;
+          }
+
+          &-button:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+

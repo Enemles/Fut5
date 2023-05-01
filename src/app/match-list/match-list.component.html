@@ -1,9 +1,98 @@
-<h1>Liste des matchs</h1>
+<h1 class="match-title">Matchs à venir ⚽</h1>
 <div class="match-grid">
-  <div class="match-card" *ngFor="let match of matchList">
-    <a (click)="showMatchDetails(match.id)" routerLink="/matches/#">
-    {{ match.name }} - {{ match.date }}  et {{ match.players }}
-    </a>
+  <div class="match-card" (click)="openModal(match)" *ngFor="let match of matchList">
+    <div class="head">
+      <div class="top">
+        <div class="date">
+          {{ match.date }}
+        </div>
+        <div class="heure">
+          {{match.time}}
+        </div>
+      </div>
+      <div class="location">
+        EventsFive
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="content">
+      <div class="name">
+        {{ match.name}}
+      </div>
+      <div class="players">
+        {{ match.players.length }} joueurs inscrits
+      </div>
+      <div class="status-inscrit" *ngIf="getStatus(match) === 'present' || getStatus(match) === 'absent' ">
+        Tu es noté
+        <span class="player-status" [ngClass]="{
+      'status-present': getStatus(match) === 'present',
+      'status-absent': getStatus(match) === 'absent'
+    }"
+        >
+    {{ getStatus(match) }}
+  </span>
+        pour ce match
+      </div>
+    </div>
+    <div class="match-status">
+      CONFIRME
+    </div>
+  </div>
+</div>
+<app-modal-match [selectedMatch]="selectedMatch" [currentUser]="currentUser">
+  <div class="title">
+    MATCH DU {{ selectedMatch?.date }}
+  </div>
+  <div class="match-details">
+    Le match se déroule à
+    <span class="match-location">
+      {{ selectedMatch?.name}}
+    </span>
+    à
+    <span class="match-time">
+       {{selectedMatch?.time}}
+    </span>
+    , il y a
+    <span class="match-players--length">
+      {{ selectedMatch?.players.length }}
+    </span>
+    joueurs inscrits
+  </div>
+  <div class="list-players">
+    Liste des joueurs présents
+    <div class="flex-container">
+      <div class="player" *ngFor="let player of selectedMatch?.players">
+        {{ player.name }}
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="status" *ngIf="isCurrentUser(selectedMatch)">
+      Je suis
+      <button
+        class="status-button"
+        (click)="changeStatus(isCurrentUser(selectedMatch), 'present')"
+        [ngClass]="{
+      'status-present': isCurrentUser(selectedMatch).status === 'present'
+    }"
+      >
+        PRESENT
+      </button>
+      <button
+        class="status-button"
+        (click)="changeStatus(isCurrentUser(selectedMatch), 'absent')"
+        [ngClass]="{
+      'status-absent': isCurrentUser(selectedMatch).status === 'absent'
+    }"
+      >
+        ABSENT
+      </button>
+    </div>
+    <div class="match-status">
+      CONFIRME
+    </div>
   </div>
 
-</div>
+</app-modal-match>
+
+
