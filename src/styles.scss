@@ -21,7 +21,7 @@ $error: #db2763;
 
 @import "font-awesome/css/font-awesome.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap");
 $nunito: "Nunito", sans-serif;
 
 @font-face {
@@ -42,9 +42,13 @@ $nunito: "Nunito", sans-serif;
 
 $tango: "TangoSans", sans-serif;
 
+$light-weight: 300;
 $regular-weight: 400;
-$medium-weight: 600;
+$medium-weight: 500;
+$semi-bold-weight: 600;
 $bold-weight: 700;
+$extra-bold-weight: 800;
+$black-weight: 900;
 
 $transition-fast: 0.3s;
 

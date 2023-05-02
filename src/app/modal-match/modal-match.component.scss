@@ -1,3 +1,5 @@
+@import "../../styles.scss";  
+
 .modal {
   display: none;
   position: fixed;
@@ -29,7 +31,7 @@
       color: #131340;
     }
     .match-details{
-      font-weight: 500;
+      font-weight: $regular-weight;
       font-size: 16px;
       line-height: 22px;
       text-align: center;
@@ -37,17 +39,17 @@
     }
     .match{
       &-location, &-time, &-players--length{
-        font-weight: 700;
+        font-weight: $bold-weight;
       }
     }
     .list-players{
-      font-weight: 700;
+      font-weight: $bold-weight;
       font-size: 20px;
       text-align: center;
       .flex-container{
         display: flex;
         flex-wrap: wrap;
-        font-weight: 500;
+        font-weight: $regular-weight;
         font-size: 16px;
         line-height: 22px;
         margin: 30px 0;
@@ -66,7 +68,7 @@
             border: none;
             padding: 10px 20px;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: $bold-weight;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
             border-radius: 5px;
@@ -108,7 +110,7 @@
 .close {
   color: #aaa;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: $bold-weight;
   position: absolute;
   right: 50px;
 }

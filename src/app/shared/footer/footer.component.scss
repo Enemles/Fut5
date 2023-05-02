@@ -13,6 +13,12 @@ footer {
         display: flex;
         gap: 90px;
 
+        @media screen and (max-width: $sm) {
+          display: flex;
+          gap: 40px;
+          flex-direction: column;
+        }
+
         .footer-column {
           .footer-title {
             font-weight: $bold-weight;
@@ -38,7 +44,7 @@ footer {
             gap: 6px;
 
             a {
-              font-weight: $regular-weight;
+              font-weight: $light-weight;
               font-size: 1.4rem;
               color: $dark-grey;
               transition: color $transition-fast ease;
@@ -62,7 +68,6 @@ footer {
 
           .logo {
             font-size: 2.5rem;
-            font-weight: $medium-weight;
             font-family: $tango;
             line-height: 0.7;
           }

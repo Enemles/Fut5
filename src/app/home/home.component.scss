@@ -105,6 +105,11 @@ section.keys {
 
     .key-title {
       margin-bottom: 100px;
+
+      @media screen and (max-width: $sm) {
+        margin-bottom: 80px;
+        text-align: center;
+      }
     }
 
     .numbers-container {
@@ -113,16 +118,21 @@ section.keys {
       justify-content: space-evenly;
       width: 100%;
 
+      @media screen and (max-width: $sm) {
+        flex-direction: column;
+        gap: 30px;
+      }
+
       .number {
         margin-bottom: 0;
         font-size: 4rem;
         color: $green;
-        font-weight: $medium-weight;
+        font-weight: $semi-bold-weight;
       }
 
       .text {
         font-size: 2rem;
-        font-size: $medium-weight;
+        font-weight: $semi-bold-weight;
       }
 
       .players,
@@ -153,6 +163,12 @@ section.push-bottom {
     align-items: center;
     justify-content: space-around;
     padding: 30px 0;
+
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+      text-align: center;
+      gap: 25px;
+    }
   }
 
   .btn {

@@ -34,7 +34,7 @@
   display: block;
   text-decoration: none;
   color: $black;
-  font-weight: $medium-weight;
+  font-weight: $semi-bold-weight;
 
   // &::after {
   //   content: "";
@@ -57,6 +57,6 @@
   //   }
   // }
 }
-.no-arrow{
+.no-arrow {
   padding: 10px 25px;
 }
