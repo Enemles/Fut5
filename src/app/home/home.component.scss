@@ -85,3 +85,19 @@ section.strat {
     }
   }
 }
+
+section.keys {
+  .keys-container{
+    display: flex;
+  }
+
+  .number{
+    margin-bottom: 0;
+  }
+
+  .players, .matchs, .sponsors{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
