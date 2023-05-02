@@ -1,0 +1,82 @@
+.match-title {
+  margin-bottom: 50px;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .match-card {
+    grid-column: span 4;
+    background: #F8F8F8;
+    border-radius: 5px;
+    padding: 25px;
+    filter: drop-shadow(8px 8px 0px #63C37B);
+    cursor: pointer;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 1024px) {
+      grid-column: span 6;
+    }
+    @media screen and (max-width: 768px) {
+      grid-column: span 12;
+    }
+
+    .head {
+      display: flex;
+      flex-direction: column;
+      color: #131340;
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 25px;
+      }
+
+      .location {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    .separator {
+      width: 100%;
+      height: 1px;
+      background-color: #D9D9D9;
+      margin: 10px 0;
+    }
+
+    .content {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+
+      .players, .status {
+        font-weight: 700;
+      }
+
+      .status-present {
+        color: green;
+      }
+
+      .status-absent {
+        color: red;
+      }
+    }
+
+    .match-status {
+      padding: 10px 25px;
+      background: #63C37B;
+      border-radius: 5px;
+      color: white;
+      text-transform: uppercase;
+      float: right;
+    }
+
+  }
+}

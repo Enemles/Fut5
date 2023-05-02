@@ -54,6 +54,7 @@ html {
 }
 
 * {
+  font-family: $font-text;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -165,10 +166,14 @@ a {
   }
 }
 
+@import 'font-awesome/css/font-awesome.css';
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 400px;
+  margin: 0 auto;
 
   .form-group {
     label {
@@ -185,7 +190,7 @@ form {
     margin-bottom: 10px;
     &::before {
       content: "\f005";
-      font-family: "FontAwesome";
+      font-family: 'FontAwesome';
       font-size: 24px;
     }
   }
@@ -239,4 +244,41 @@ $container-xxl: 1320px;
     padding-right: $gutter-mobile;
     padding-left: $gutter-mobile;
   }
+}
+
+.snackbar {
+  &-succes {
+    .mdc-snackbar__surface{
+      background-color: rgb(65, 252, 134) !important;
+      color: white;
+    }
+
+    button {
+      background-color: rgb(65, 252, 134);
+      color: white;
+      border: none;
+    }
+  }
+
+  &-error {
+    .mdc-snackbar__surface{
+      background-color: #F44336 !important;
+      color: white;
+    }
+
+    button {
+      background-color: #F44336;
+      color: white !important;
+      border: none;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
