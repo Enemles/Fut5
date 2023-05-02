@@ -22,13 +22,11 @@
 
 .header-nav-list {
   display: flex;
+  align-items: center;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.header-nav-item {
-  margin-left: 1rem;
 }
 
 .header-nav-link {
