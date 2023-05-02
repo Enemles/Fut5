@@ -269,27 +269,39 @@ body{
 .snackbar {
   &-succes {
     .mdc-snackbar__surface{
-      background-color: rgb(65, 252, 134) !important;
+      background-color: $green !important;
       color: white;
     }
-
+    .mdc-snackbar__label{
+      font-family: $nunito !important;
+    }
     button {
-      background-color: rgb(65, 252, 134);
+      background-color: $succes;
       color: white;
       border: none;
+    }
+    .mdc-button__label{
+      font-family: $nunito !important;
+      letter-spacing: 0;
     }
   }
 
   &-error {
     .mdc-snackbar__surface{
-      background-color: #F44336 !important;
+      background-color: red !important;
       color: white;
     }
-
+    .mdc-snackbar__label{
+      font-family: $nunito !important;
+    }
     button {
-      background-color: #F44336;
+      background-color: $error;
       color: white !important;
       border: none;
+    }
+    .mdc-button__label{
+      font-family: $nunito !important;
+      letter-spacing: 0;
     }
   }
 }
