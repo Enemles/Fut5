@@ -54,7 +54,7 @@ html {
 }
 
 * {
-  font-family: $font-text;
+  font-family: $nunito;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -81,7 +81,7 @@ h2,
 }
 
 p {
-  font-family: "Nunito";
+  font-family: $nunito;
   font-style: normal;
   font-weight: 500;
   font-size: 1.4rem;
@@ -145,7 +145,7 @@ a {
       }
 
       &::after {
-        right: 0px;
+        right: 0;
         opacity: 0;
       }
 
