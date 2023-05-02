@@ -1,7 +1,7 @@
-<div *ngIf="currentUser$ | async as currentUser">
+<!-- <div *ngIf="currentUser$ | async as currentUser">
   <p>Salut {{currentUser.displayName}}!</p>
-  <!--  <p>Salut {{currentUser.displayName.split(' ')[0]}}!</p>-->
-</div>
+ <p>Salut {{currentUser.displayName.split(' ')[0]}}!</p>
+</div> -->
 
 <section class="hero container">
   <div class="hero-wrapper ">
@@ -9,7 +9,8 @@
       <h1 class="h1">La meilleure app pour gérer tes parties de five entre amis ! </h1>
       <p>Lorem ipsum dolor sit amet consectetur adipiscing elit est, dignissim netus molestie sem lectus et bibendum
         nullam, platea ornare eu facilisi nulla vel curae.</p>
-      <a href="#" class="btn btn-primary"><span class="btn-label">Télécharger notre app</span></a>
+        <!-- TODO : -->
+      <a routerLink="/matches" class="btn btn-primary"><span class="btn-label">Télécharger notre app</span></a>
     </div>
     <img src="../../assets/images/img-header.png" alt="" class="hero-img">
   </div>
@@ -22,13 +23,14 @@
       <p class="mb-40">Lorem ipsum dolor sit amet consectetur adipiscing elit est, dignissim netus molestie sem lectus
         et bibendum
         nullam, platea ornare eu facilisi nulla vel curae.</p>
-      <a href="#" class="btn btn-primary">
+         <!-- TODO : Mettre la route /classement quand elle sera crée-->
+      <a routerLink="/matches" class="btn btn-primary">
         <span class="btn-label">Je fonde mon équipe</span>
       </a>
     </div>
     <img src="../../assets/images/start-left.png" class="strat-img img-left">
   </div>
-  <div class="strat-right strat-flex">
+  <div class="strat-right strat-flex container">
     <div class="text-wrapper">
       <h2 class="h2">Suis en temps réel le classement de ta ligue 🏆</h2>
       <p class="mb-25">Lorem ipsum dolor sit amet consectetur adipiscing elit est, dignissim netus molestie sem lectus
@@ -38,7 +40,7 @@
         augue lacinia
         nec nisl odio torquent dapibus. Sapien facilisis morbi velit enim ac, aliquam dictum consequat purus venenatis
         ridiculus.</p>
-      <a href="#" class="btn btn-primary"><span class="btn-label">Je surveille le classement</span></a>
+      <a routerLink="/matches" class="btn btn-primary"><span class="btn-label">Je surveille le classement</span></a>
     </div>
     <img src="../../assets/images/start-right.png" class="strat-img img-right">
   </div>
@@ -46,49 +48,39 @@
 
 <section class="keys container">
   <div class="keys-container">
-    <h2 class="key-title">FUT 5 en quelques chiffres</h2>
-    <div class="players">
-      <p class="number">
-        32
-      </p>
-      <p class="text">
-        Joueurs
-      </p>
-    </div>
-    <div class="matchs">
-      <p class="number">
-        211
-      </p>
-      <p class="text">
-        Macths organisés
-      </p>
-    </div>
-    <div class="sponsors">
-      <p class="number">
-        2
-      </p>
-      <p class="text">
-        Sponsors
-      </p>
+    <h2 class="key-title">FUT5 en quelques chiffres</h2>
+    <div class="numbers-container">
+      <div class="players">
+        <p class="number">
+          32
+        </p>
+        <p class="text">
+          Joueurs
+        </p>
+      </div>
+      <div class="matchs">
+        <p class="number">
+          211
+        </p>
+        <p class="text">
+          Macths organisés
+        </p>
+      </div>
+      <div class="sponsors">
+        <p class="number">
+          2
+        </p>
+        <p class="text">
+          Sponsors
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<section class="push-bottom">
+  <div class="push-wrapper container">
+    <p>Crée ton compte et commence dès maintenant ton premier match ! </p>
+    <a routerLink="/register" class="btn no-arrow">S'inscrire</a>
+  </div>
+</section>

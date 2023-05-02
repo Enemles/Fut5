@@ -1,14 +1,120 @@
-.footer {
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
-  padding: 1rem 0;
-  height: 5vh;
-}
+@import "../../../styles.scss";
 
-.footer-container {
-  width: 100%;
-  height:100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+footer {
+  // background-color: salmon;
+  margin-top: $margin-section;
+
+  .footer {
+    .footer-columns {
+      display: flex;
+      justify-content: space-between;
+
+      .right-footer-column {
+        display: flex;
+        gap: 90px;
+
+        .footer-column {
+          .footer-title {
+            font-weight: $bold-weight;
+            font-size: 1.6rem;
+            color: $black;
+            margin-bottom: 16px;
+          }
+
+          .footer-flag {
+            display: flex;
+            gap: 12px;
+
+            img {
+              width: 34px;
+              height: 20px;
+              cursor: pointer;
+            }
+          }
+
+          .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            a {
+              font-weight: $regular-weight;
+              font-size: 1.4rem;
+              color: $dark-grey;
+              transition: color $transition-fast ease;
+
+              &:hover {
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+
+      .left-footer-column {
+        .footer-column {
+          display: flex;
+          flex-direction: column;
+
+          p {
+            margin-bottom: 0;
+          }
+
+          .logo {
+            font-size: 2.5rem;
+            font-weight: $medium-weight;
+            font-family: $tango;
+            line-height: 0.7;
+          }
+
+          .copryright {
+            font-size: 1.1rem;
+            color: $dark-grey;
+            margin-bottom: 16px;
+          }
+
+          .app-store {
+            width: 115px;
+            height: 40px;
+            cursor: pointer;
+            margin-bottom: 12px;
+          }
+
+          .google-play {
+            width: 118px;
+            height: 35px;
+            cursor: pointer;
+          }
+        }
+
+        // .footer-column {
+        //   width: 150px;
+        //   height: 140px;
+        //   background-color: blue;
+        // }
+      }
+    }
+
+    margin-bottom: 50px;
+  }
+
+  .sub-footer {
+    border-top: 1px solid $grey;
+
+    .sub-footer-wrapper {
+      display: flex;
+      gap: 25px;
+      padding-top: 17px;
+      padding-bottom: 20px;
+
+      a {
+        color: $dark-grey;
+        transition: color $transition-fast ease;
+
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+  }
 }

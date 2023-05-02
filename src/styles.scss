@@ -95,10 +95,9 @@ a {
   font-size: 1.4rem;
 }
 
-
 .btn {
   position: relative;
-  padding: 10px 25px;
+  padding: 10px 42px 10px 25px;
   border: none;
   border-radius: 5px;
   font-weight: $medium-weight;
@@ -107,10 +106,11 @@ a {
   width: fit-content;
 
   &.no-arrow {
+    padding: 10px 25px;
     transition: all $transition-fast;
 
     &:hover {
-      background-color: darken($color: $green, $amount: 5);
+      background-color: darken($color: $green, $amount: 10) !important;
     }
   }
 
@@ -166,7 +166,7 @@ a {
   }
 }
 
-@import 'font-awesome/css/font-awesome.css';
+@import "font-awesome/css/font-awesome.css";
 
 form {
   display: flex;
@@ -190,7 +190,7 @@ form {
     margin-bottom: 10px;
     &::before {
       content: "\f005";
-      font-family: 'FontAwesome';
+      font-family: "FontAwesome";
       font-size: 24px;
     }
   }
@@ -199,7 +199,7 @@ form {
 //CONTAINER
 
 //margin-bottom
-$margin-section: 200px;
+$margin-section: 150px;
 
 //gutter
 $gutter-desktop: 20px;
@@ -245,7 +245,7 @@ $container-xxl: 1320px;
     padding-left: $gutter-mobile;
   }
 }
-body{
+body {
   margin: 0;
 }
 
@@ -268,11 +268,11 @@ body{
 
 .snackbar {
   &-succes {
-    .mdc-snackbar__surface{
+    .mdc-snackbar__surface {
       background-color: $green !important;
       color: white;
     }
-    .mdc-snackbar__label{
+    .mdc-snackbar__label {
       font-family: $nunito !important;
     }
     button {
@@ -280,18 +280,18 @@ body{
       color: white;
       border: none;
     }
-    .mdc-button__label{
+    .mdc-button__label {
       font-family: $nunito !important;
       letter-spacing: 0;
     }
   }
 
   &-error {
-    .mdc-snackbar__surface{
+    .mdc-snackbar__surface {
       background-color: red !important;
       color: white;
     }
-    .mdc-snackbar__label{
+    .mdc-snackbar__label {
       font-family: $nunito !important;
     }
     button {
@@ -299,14 +299,15 @@ body{
       color: white !important;
       border: none;
     }
-    .mdc-button__label{
+    .mdc-button__label {
       font-family: $nunito !important;
       letter-spacing: 0;
     }
   }
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
