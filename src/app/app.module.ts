@@ -16,6 +16,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import {AngularFireModule} from "@angular/fire/compat";
 import {FormsModule} from "@angular/forms";
+import { ModalMatchComponent } from './modal-match/modal-match.component';
+import {ClickOutsideDirective} from "./Directives/click-outside.directive";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 if (environment.production) {
   enableProdMode();
@@ -30,16 +34,21 @@ if (environment.production) {
     PlayerDetailsComponent,
     LoginComponent,
     RegisterComponent,
+    RegisterComponent,
+    ModalMatchComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     SharedModule,
+    MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
