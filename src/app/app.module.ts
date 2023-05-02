@@ -29,7 +29,7 @@ if (environment.production) {
     MatchDetailsComponent,
     PlayerDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,46 +29,17 @@
 }
 
 .header-nav-item {
-  padding: 9px 25px;
-  font-size: 16px;
-  line-height: 22px;
-
-  &.register,
-  &.logout {
-    background: $green;
-    border-radius: 5px;
-    a {
-      color: $white;
-    }
-  }
+  margin-left: 1rem;
 }
 
 .header-nav-link {
-  list-style: none;
-  position: relative;
+  color: #333;
   display: block;
+  padding: 0.25rem 0.5rem;
   text-decoration: none;
-  color: $black;
-  font-weight: $medium-weight;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 1px;
-    left: 0;
-    width: 100%;
-    transition: transform 0.3s ease;
-    transform: scaleX(0);
-    transform-origin: top right;
-    border-bottom: 1px solid $black;
-  }
 
   &:hover {
+    color: #007bff;
     text-decoration: none;
-
-    &::after {
-      transform: scaleX(1);
-      transform-origin: top left;
-    }
   }
 }
