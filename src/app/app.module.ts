@@ -20,6 +20,7 @@ import { ModalMatchComponent } from './modal-match/modal-match.component';
 import {ClickOutsideDirective} from "./Directives/click-outside.directive";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {ProfileComponent} from "./profile/profile.component";
 
 if (environment.production) {
   enableProdMode();
@@ -36,7 +37,8 @@ if (environment.production) {
     RegisterComponent,
     RegisterComponent,
     ModalMatchComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,34 @@
-<p>profile works!</p>
+<div class="container">
+  <div class="left-side">
+    <app-player-card></app-player-card>
+  </div>
+  <div class="right-side">
+    <div class="img-banner">
+      <img src="../../assets/img/banniere-ligue.jpeg" alt="img banner">
+    </div>
+    <div class="banner">
+      <span>- PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}}
+        - PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}} </span>
+      <span>- PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}}
+        - PROCHAIN MATCH : {{nextMatch | uppercase}} - PROCHAIN MATCH : {{nextMatch | uppercase}} </span>
+    </div>
+    <div class="infos">
+      <span id="location">{{location | uppercase}}</span>
+      <span id="hour">{{hour}}</span>
+      <span id="team">{{team}}</span>
+      <div class="teamlist" id="team1">
+        <span class="player" *ngFor="let player of listTeam1">
+              {{statJoueursTemp}} {{player | uppercase}}
+        </span>
+      </div>
+      <span id="versus">
+        VS
+      </span>
+      <div class="teamlist" id="team2">
+      <span class="player"
+            *ngFor="let player of listTeam2">
+              {{statJoueursTemp}} {{player | uppercase}}
+        </span>
+      </div>
+    </div>
+  </div>
