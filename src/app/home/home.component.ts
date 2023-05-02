@@ -12,6 +12,7 @@ export class HomeComponent {
 
   hour: string = "18H00";
   team: string = "Red";
+  statJoueursTemp: string = "99";
 
   listTeam1: Array<string> = ["Brice", "Matias", "Simon", "Lucas", "Clement"]
   listTeam2: Array<string> = ["Clement", "Jules", "Simon", "Selmene", "Valmond"]

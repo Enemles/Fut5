@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-player-card',
@@ -16,5 +16,7 @@ export class PlayerCardComponent {
   DRI: number = 95;
   DEF: number = 95;
   PHY: number = 95;
+
+
 
 }
