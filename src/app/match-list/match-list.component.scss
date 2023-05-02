@@ -17,6 +17,14 @@
     padding: 25px;
     filter: drop-shadow(8px 8px 0px #63C37B);
     cursor: pointer;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 1024px) {
+      grid-column: span 6;
+    }
+    @media screen and (max-width: 768px) {
+      grid-column: span 12;
+    }
 
     .head {
       display: flex;

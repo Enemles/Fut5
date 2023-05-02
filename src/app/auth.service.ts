@@ -25,7 +25,7 @@ export class AuthService {
       return true;
     } catch (error) {
       console.log(error);
-      return false;
+      throw error
     }
   }
 
@@ -51,7 +51,7 @@ export class AuthService {
       return true;
     } catch (error) {
       console.log(error);
-      return false;
+      throw error
     }
   }
 
@@ -61,6 +61,7 @@ export class AuthService {
       await this.afAuth.signOut();
     } catch (error) {
       console.log(error);
+      throw error;
     }
   }
 

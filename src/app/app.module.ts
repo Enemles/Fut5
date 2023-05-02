@@ -18,6 +18,8 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {FormsModule} from "@angular/forms";
 import { ModalMatchComponent } from './modal-match/modal-match.component';
 import {ClickOutsideDirective} from "./Directives/click-outside.directive";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 if (environment.production) {
   enableProdMode();
@@ -40,10 +42,12 @@ if (environment.production) {
     AppRoutingModule,
     FormsModule,
     SharedModule,
+    MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
