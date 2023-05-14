@@ -23,15 +23,8 @@
         <div class="players">
           {{ match.joueurs?.length }} joueurs inscrits
         </div>
-        <div class="status-inscrit" *ngIf="getStatus(match) !== null">
-          Tu es noté
-          <span class="player-status" [ngClass]="{
-            'status-present': getStatus(match),
-            'status-absent': !getStatus(match)
-          }">
-            {{ getStatus(match) ? 'PRESENT' : 'ABSENT' }}
-          </span>
-          pour ce match
+        <div class="status-inscrit" *ngIf="isCurrentUser(match)">
+          Vous êtes inscrit(e) pour ce match.
         </div>
       </div>
     </div>
@@ -59,31 +52,22 @@
       Liste des joueurs présents
       <div class="flex-container">
         <div class="player" *ngFor="let player of selectedMatch?.joueurs">
-          {{ player.joueurId }}
+          {{ player.prenom }}
         </div>
       </div>
     </div>
     <div class="bottom">
       <div class="status-inscrit">
-        <button *ngIf="getStatus(selectedMatch) === null" (click)="registerForMatch(selectedMatch.id)">
+        <button *ngIf="!isUserRegisteredForMatch(selectedMatch)" (click)="registerForMatch(selectedMatch.id)" class="btn btn-primary register-button">
+          <span class="btn-label">
           Je m'inscris
-        </button>
-        <span *ngIf="getStatus(selectedMatch) === 'present'">
-      Je suis présent à ce match
-    </span>
-        <span *ngIf="getStatus(selectedMatch) === 'absent'">
-      Je suis absent à ce match
-    </span>
-        <button *ngIf="getStatus(selectedMatch) === null" (click)="unregisterFromMatch(selectedMatch.id)">
+          </span>        </button>
+        <button *ngIf="isUserRegisteredForMatch(selectedMatch)" (click)="unregisterFromMatch(selectedMatch.id)" class="btn btn-danger unregister-button">
+                    <span class="btn-label">
           Je me désinscris
+          </span>
         </button>
       </div>
-      <span *ngIf="getStatus(selectedMatch) === 'present'">
-    Je suis présent à ce match
-  </span>
-      <span *ngIf="getStatus(selectedMatch) === 'absent'">
-    Je suis absent à ce match
-  </span>
       <div class="status" *ngIf="isCurrentUser(selectedMatch)">
         Je suis
         <button
@@ -112,5 +96,3 @@
 
   </app-modal-match>
 </div>
-
-

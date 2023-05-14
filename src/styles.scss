@@ -171,6 +171,15 @@ a {
   }
 }
 
+.btn-danger{
+  background: $error;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+}
+
 @import "font-awesome/css/font-awesome.css";
 
 form {

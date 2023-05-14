@@ -10,7 +10,6 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeComponent } from './home/home.component';
 import { MatchListComponent } from './match-list/match-list.component';
-import { MatchDetailsComponent } from './match-details/match-details.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -31,7 +30,6 @@ if (environment.production) {
     AppComponent,
     HomeComponent,
     MatchListComponent,
-    MatchDetailsComponent,
     PlayerDetailsComponent,
     LoginComponent,
     RegisterComponent,
