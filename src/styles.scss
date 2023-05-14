@@ -99,6 +99,7 @@ a {
   font-size: 1.4rem;
 }
 
+
 .btn {
   position: relative;
   padding: 10px 42px 10px 25px;
@@ -192,11 +193,11 @@ form {
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
-    &::before {
-      content: "\f005";
-      font-family: "FontAwesome";
-      font-size: 24px;
-    }
+    //&::before {
+    //  content: "\f005";
+    //  font-family: 'FontAwesome';
+    //  font-size: 24px;
+    //}
   }
 }
 
@@ -248,9 +249,6 @@ $container-xxl: 1320px;
     padding-right: $gutter-mobile;
     padding-left: $gutter-mobile;
   }
-}
-body {
-  margin: 0;
 }
 
 @font-face {
