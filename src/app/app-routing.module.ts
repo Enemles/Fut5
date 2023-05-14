@@ -7,6 +7,7 @@ import { PlayerDetailsComponent } from './player-details/player-details.componen
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import {AuthGuard} from "./auth.guard";
+import {TooltipPlayerComponent} from "./profile/tooltip-player/tooltip-player.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'matches/:id', component: MatchDetailsComponent },
   { path: 'players/:id', component: PlayerDetailsComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'tooltip', component: TooltipPlayerComponent}
 ];
 
 @NgModule({

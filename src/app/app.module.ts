@@ -21,6 +21,7 @@ import {ClickOutsideDirective} from "./Directives/click-outside.directive";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {ProfileComponent} from "./profile/profile.component";
+import { TooltipPlayerComponent } from './profile/tooltip-player/tooltip-player.component';
 
 if (environment.production) {
   enableProdMode();
@@ -38,7 +39,8 @@ if (environment.production) {
     RegisterComponent,
     ModalMatchComponent,
     ClickOutsideDirective,
-    ProfileComponent
+    ProfileComponent,
+    TooltipPlayerComponent
   ],
   imports: [
     BrowserModule,
