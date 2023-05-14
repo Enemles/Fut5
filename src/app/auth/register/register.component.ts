@@ -10,16 +10,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  firstName = '';
-  lastName = '';
+  nom = '';
+  prenom = '';
   email = '';
   password = '';
+  dateNaissance = '';
 
   constructor(private authService: AuthService, private snackBar: MatSnackBar) {}
 
   async register() {
     try {
-      await this.authService.register(this.email, this.password, this.firstName, this.lastName);
+      await this.authService.register(this.email, this.password, this.nom, this.prenom, this.dateNaissance);
       this.showSuccessSnackBar('Vous êtes inscrit.');
       console.log('User registered');
     } catch (error) {

@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
 import { Firestore } from '@angular/fire/firestore';
 import {ModalMatchComponent} from "../modal-match/modal-match.component";
+import {MatchService} from "../match.service";
 
 @Component({
   selector: 'app-match-list',
@@ -10,48 +11,55 @@ import {ModalMatchComponent} from "../modal-match/modal-match.component";
   styleUrls: ['./match-list.component.scss'],
 })
 export class MatchListComponent implements OnInit {
-  matchList: any[] = [
-    {
-      id: '1',
-      name: 'Match 1',
-      date: '2021-01-01',
-      time: '12:00',
-      location: 'Location 1',
-      players: [
-        { uid: 'LhMzynSvoxQLEnLNuj7vaR7oVup2', name: 'Player 1', status: 'present' },
-        { uid: 'user2', name: 'Player 2', status: 'present' },
-        { uid: 'user3', name: 'Player 3', status: 'present' },
-      ],
-      status : 'confirmed'
-    },
-    {
-      id: '2',
-      name: 'Match 2',
-      date: '2021-01-02',
-      time: '12:00',
-      location: 'Location 2',
-      players: [
-        { uid: 'gLsg4wLRvYUxqBBUNb8vuD7bcmG3', name: 'Player 1', status: 'present' },
-        { uid: 'user2', name: 'Player 2', status: 'present' },
-        { uid: 'user3', name: 'Player 3', status: 'present' },
-      ],
-      status : 'notconfirmed'
-    }
-  ];
-
+  matches: any[] = [];
+  currentUser: any;
   selectedMatch: any;
 
   @ViewChild(ModalMatchComponent, { static: false })
 
   modal: ModalMatchComponent;
 
-  currentUser: any;
-
-  constructor(private dataService: DataService, private authService: AuthService) {
+  constructor(private matchService: MatchService, private authService: AuthService) {
     this.authService.getCurrentUser().subscribe((user) => {
       this.currentUser = user;
       console.log(this.currentUser)
     });
+  }
+
+  getStatus(match: any): string | boolean | null {
+    const currentUserInMatch = this.isCurrentUser(match);
+    return currentUserInMatch ? currentUserInMatch.status : null;
+  }
+
+
+  async addMatch() {
+    const match = {
+      equipe1: 'Equipe 1',
+      equipe2: 'Equipe 2',
+      lieu: 'Stade XYZ',
+      date: '2023-05-10',
+      heure: '14:00',
+      joueurs: [
+        {
+          joueurId: 'tmIrKGO8Q9Tvp3hy7BPmtVB6szd2',
+          displayName: 'Joueur 1',
+          present: true,
+        },
+        {
+          joueurId: 'joueur2',
+          displayName: 'Joueur 2',
+          present: false,
+        },
+      ],
+    };
+
+    try {
+      const matchId = await this.matchService.createMatch(match);
+      console.log('Match créé avec succès', matchId);
+      this.matches.push(match);
+    } catch (error) {
+      console.error('Erreur lors de la création du match :', error);
+    }
   }
 
   isCurrentUser(match: any): any {
@@ -60,34 +68,53 @@ export class MatchListComponent implements OnInit {
     }
     return match.players.find((player: any) => player.uid === this.currentUser.uid);
   }
-
-
-  getStatus(match: any): string | boolean | null {
-    const currentUserInMatch = this.isCurrentUser(match);
-    return currentUserInMatch ? currentUserInMatch.status : null;
-  }
-
-
   openModal(match: any) {
     this.selectedMatch = match;
     this.modal.showModal();
-  }
-
-  closeModal() {
-    this.selectedMatch = null;
-    this.modal.hideModal();
   }
 
   changeStatus(player: any, newStatus: string) {
     player.status = newStatus;
   }
 
+  getMatches() {
+    this.matchService.getMatches().subscribe((matches) => {
+      this.matches = matches;
+    });
+  }
 
+  getCurrentUser() {
+    this.authService.getCurrentUser().subscribe((user) => {
+      this.currentUser = user;
+    });
+  }
+
+  registerForMatch(matchId: string) {
+    if (this.currentUser) {
+      this.matchService
+        .addPlayerToMatch(matchId, this.currentUser.uid)
+        .then(() => {
+          console.log('Inscrit avec succès au match');
+        });
+    } else {
+      console.log('Vous devez être connecté pour vous inscrire à un match');
+    }
+  }
+
+  unregisterFromMatch(matchId: string) {
+    if (this.currentUser) {
+      this.matchService
+        .removePlayerFromMatch(matchId, this.currentUser.uid)
+        .then(() => {
+          console.log('Désinscription réussie');
+        });
+    } else {
+      console.log('Vous devez être connecté pour vous désinscrire');
+    }
+  }
 
   ngOnInit(): void {
-    // this.dataService.getMatchList().subscribe((matches) => {
-    //   this.matchList = matches;
-    //   console.log(this.matchList);
-    // });
+    this.getMatches();
+    this.getCurrentUser();
   }
 }

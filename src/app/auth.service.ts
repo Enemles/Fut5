@@ -30,31 +30,49 @@ export class AuthService {
   }
 
 // Méthode d'inscription
-  async register(email: string, password: string, firstName: string, lastName: string): Promise<boolean> {
+  async register(
+    email: string,
+    password: string,
+    nom: string,
+    prenom: string,
+    dateNaissance: string
+  ): Promise<boolean> {
     try {
-      const {user} = await this.afAuth.createUserWithEmailAndPassword(
+      const { user } = await this.afAuth.createUserWithEmailAndPassword(
         email,
         password
       );
 
       if (user) {
         await user.updateProfile({
-          displayName: firstName + ' ' + lastName,
+          displayName: prenom + ' ' + nom,
         });
         await this.firestore.collection('users').doc(user.uid).set({
-          firstName,
-          lastName,
+          nom,
+          prenom,
           email,
+          dateNaissance,
+          stats: {
+            nbButs: 0,
+            vitesse: 0,
+            physique: 0,
+            dribble: 0,
+            tir: 0,
+            defense: 0,
+            passe: 0,
+            nbFoisMVP: 0,
+            nbFoisGuezMan: 0,
+            matchs: [],
+          },
         });
       }
       await this.router.navigate(['/']);
       return true;
     } catch (error) {
       console.log(error);
-      throw error
+      throw error;
     }
   }
-
 
   async logout(): Promise<void> {
     try {
@@ -64,12 +82,9 @@ export class AuthService {
       throw error;
     }
   }
-
   getAuthState(): Observable<firebase.User | null> {
     return this.afAuth.authState;
   }
-
-
   getCurrentUser() {
     return this.afAuth.authState.pipe(
       map(user => {

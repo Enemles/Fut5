@@ -4,12 +4,14 @@
   <form (ngSubmit)="register()">
     <div class="form-group register">
       <label for="firstName">Prénom</label>
-      <input [(ngModel)]="firstName" name="firstname" type="text" id="firstName" class="form-control" placeholder="Prénom" required
+      <input [(ngModel)]="prenom" name="prenom" type="text" id="firstName" class="form-control" placeholder="Prénom" required
       />
       <label for="lastName">Nom</label>
-      <input [(ngModel)]="lastName" name="lastname" type="text" id="lastName" class="form-control" placeholder="Nom" required
+      <input [(ngModel)]="nom" name="nom" type="text" id="lastName" class="form-control" placeholder="Nom" required
       />
-
+      <label for="dateNaissance">Date de naissance</label>
+      <input [(ngModel)]="dateNaissance" name="dateNaissance" type="date" id="dateNaissance" class="form-control" required
+      />
     </div>
     <div class="form-group">
       <label for="email">Email</label>
